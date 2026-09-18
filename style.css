@@ -1,0 +1,567 @@
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f3ead8;
+    color: #35251d;
+    font-family: "Cormorant Garamond", serif;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background-color: #2d211b;
+
+    border-bottom: 2px solid #b9955b;
+}
+
+.logo {
+    color: #d6b875;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #f3ead8;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d6b875;
+}
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: #d6b875;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(45, 33, 27, 0.72),
+            rgba(45, 33, 27, 0.72)
+        ),
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.small-title {
+    color: #b9955b;
+
+    letter-spacing: 4px;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: #f3ead8;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #d6b875;
+}
+
+.hero p:not(.small-title) {
+    color: #eee2ca;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    padding: 14px 32px;
+
+    background-color: #b9955b;
+    color: #2d211b;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    border: 1px solid #d6b875;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #d6b875;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery-section {
+    padding: 100px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading p {
+    color: #9b743d;
+    letter-spacing: 4px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    margin-top: 10px;
+}
+
+.line {
+    width: 80px;
+    height: 2px;
+    background-color: #b9955b;
+    margin: 20px auto;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px 30px;
+    width: 100%;
+}
+
+/* ================= CARD ================= */
+
+.painting-card {
+    width: 100%;
+    background-color: #fffaf0;
+    border: 1px solid #c8aa78;
+    box-shadow: 0 10px 30px rgba(45, 33, 27, 0.12);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.painting-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= IMAGE ================= */
+
+.painting-image {
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    background: #e8dcc7;
+}
+
+.painting-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.painting-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.painting-image:hover img {
+    transform: scale(1.06);
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ================= PAINTING INFO ================= */
+
+.painting-info {
+    text-align: center;
+
+    padding: 25px 20px 30px;
+}
+
+.painting-info h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #9b743d;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================= BUY BUTTONS ================= */
+
+.buy-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.buy-btn {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: 1px solid;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* WhatsApp */
+
+.buy-btn.whatsapp {
+    background-color: #315c45;
+
+    border-color: #315c45;
+
+    color: #fffaf0;
+}
+
+.buy-btn.whatsapp:hover {
+    background-color: #3e7558;
+
+    transform: translateY(-3px);
+}
+
+
+/* Instagram */
+
+.buy-btn.instagram {
+    background-color: #7c3f4f;
+
+    border-color: #7c3f4f;
+
+    color: #fffaf0;
+}
+
+.buy-btn.instagram:hover {
+    background-color: #a25368;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    padding: 100px 15%;
+
+    text-align: center;
+
+    background-color: #2d211b;
+
+    color: #f3ead8;
+}
+
+.about h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.about > p:last-child {
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #ddcfb7;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.contact h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.contact > p:not(.small-title) {
+    font-size: 19px;
+
+    margin-bottom: 30px;
+}
+
+.contact-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: inline-block;
+
+    padding: 13px 30px;
+
+    color: #f3ead8;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.contact-btn.whatsapp {
+    background-color: #315c45;
+}
+
+.contact-btn.instagram {
+    background-color: #7c3f4f;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+
+    opacity: 0.9;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background-color: #211813;
+
+    color: #cdbb9d;
+}
+
+footer h3 {
+    color: #d6b875;
+
+    font-family: "Playfair Display", serif;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-top: 8px;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #2d211b;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px;
+
+        gap: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-section {
+        padding: 70px 5%;
+    }
+
+    .image-container {
+        height: 420px;
+    }
+
+    .about {
+        padding: 80px 8%;
+    }
+
+}
+
